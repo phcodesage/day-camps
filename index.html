@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day Camps Registration - Engaging Programs for Young Learners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Hero Section -->
+      <header class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            🏕️ DAY CAMPS
+          </h1>
+          <p class="hero-subtitle">
+            Engaging Programs for Young Learners
+          </p>
+          <div class="hero-features">
+            <span class="feature-badge">🍎 Kosher Meals</span>
+            <span class="feature-badge">👨‍👩‍👧‍👦 Professional Supervision</span>
+            <span class="feature-badge">⭐ Multi-Day Discounts</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="container">
+          <div class="content-grid">
+            <!-- Left Column: Form Content -->
+            <div class="form-column">
+              <!-- Camp Options Section -->
+              <section class="section" id="camp-options">
+                <h2 class="section-title">🎯 Choose Your Camp Experience</h2>
+                <div class="camp-cards">
+                  <div class="camp-card half-day" data-camp-type="half-day" role="button" tabindex="0" aria-pressed="false">
+                    <div class="camp-header">
+                      <h3>🌅 Half Day Camp</h3>
+                      <div class="camp-price">$90<span>/day</span></div>
+                    </div>
+                    <div class="camp-details">
+                      <p class="camp-time">9 AM - 12 PM</p>
+                      <ul class="camp-includes">
+                        <li>✅ Breakfast included</li>
+                        <li>✅ Perfect for younger children</li>
+                        <li>✅ Flexible scheduling</li>
+                        <li>✅ Age-appropriate activities</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="camp-card full-day popular" data-camp-type="full-day" role="button" tabindex="0" aria-pressed="false">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="camp-header">
+                      <h3>🌞 Full Day Camp</h3>
+                      <div class="camp-price">$150<span>/day</span></div>
+                    </div>
+                    <div class="camp-details">
+                      <p class="camp-time">9 AM - 3 PM</p>
+                      <ul class="camp-includes">
+                        <li>✅ Breakfast & Lunch included</li>
+                        <li>✅ Complete day of activities</li>
+                        <li>✅ Extended care and supervision</li>
+                        <li>✅ More learning opportunities</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Available Dates Section -->
+              <section class="section" id="available-dates">
+                <h2 class="section-title">📅 Available Dates</h2>
+                <div class="dates-container">
+                  <div class="date-category">
+                    <h3>🏫 2025 Yeshiva Day Camps</h3>
+                    <div class="dates-grid" id="yeshiva-dates">
+                      <div class="date-option" data-date="2025-10-06">
+                        <span class="date">Oct 6</span>
+                        <span class="day">Monday</span>
+                      </div>
+                      <div class="date-option multi-day" data-date="2025-10-09,2025-10-10">
+                        <span class="date">Oct 9-10</span>
+                        <span class="day">Thu-Fri</span>
+                        <span class="badge">2 Days</span>
+                      </div>
+                      <div class="date-option" data-date="2025-10-13">
+                        <span class="date">Oct 13</span>
+                        <span class="day">Monday</span>
+                      </div>
+                      <div class="date-option" data-date="2025-12-15">
+                        <span class="date">Dec 15</span>
+                        <span class="day">Monday</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="date-category">
+                    <h3>🏛️ Public School Days</h3>
+                    <div class="dates-grid" id="public-dates">
+                      <div class="date-option" data-date="2025-10-13">
+                        <span class="date">Oct 13</span>
+                        <span class="day">Monday</span>
+                      </div>
+                      <div class="date-option" data-date="2025-10-20">
+                        <span class="date">Oct 20</span>
+                        <span class="day">Monday</span>
+                      </div>
+                      <div class="date-option" data-date="2025-11-04">
+                        <span class="date">Nov 4</span>
+                        <span class="day">Tuesday</span>
+                      </div>
+                      <div class="date-option" data-date="2025-11-11">
+                        <span class="date">Nov 11</span>
+                        <span class="day">Tuesday</span>
+                      </div>
+                      <div class="date-option multi-day" data-date="2025-12-24,2025-12-25,2025-12-26">
+                        <span class="date">Dec 24-26</span>
+                        <span class="day">Wed-Fri</span>
+                        <span class="badge">3 Days</span>
+                      </div>
+                      <div class="date-option multi-day" data-date="2025-12-29,2025-12-30,2025-12-31">
+                        <span class="date">Dec 29-31</span>
+                        <span class="day">Mon-Wed</span>
+                        <span class="badge">3 Days</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Registration Form -->
+              <section class="section" id="registration-form">
+                <h2 class="section-title">📝 Registration Information</h2>
+                
+                <form id="camp-registration-form">
+                  <!-- Parent Information -->
+                  <div class="form-group">
+                    <h3 class="group-title">👨‍👩‍👧‍👦 Parent/Guardian Information</h3>
+                    <div class="form-row">
+                      <div class="form-field">
+                        <label for="parent-name">Parent/Guardian Name *</label>
+                        <input type="text" id="parent-name" name="parentName" required>
+                      </div>
+                      <div class="form-field">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-field">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                      </div>
+                      <div class="form-field">
+                        <label for="emergency-contact">Emergency Contact Name</label>
+                        <input type="text" id="emergency-contact" name="emergencyContact">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-field">
+                        <label for="emergency-phone">Emergency Contact Phone</label>
+                        <input type="tel" id="emergency-phone" name="emergencyPhone">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Children Information -->
+                  <div class="form-group">
+                    <div class="group-header">
+                      <h3 class="group-title">👶 Children Information</h3>
+                      <button type="button" id="add-child" class="add-child-btn">+ Add Child</button>
+                    </div>
+                    <div id="children-container">
+                      <!-- Children forms will be dynamically added here -->
+                    </div>
+                  </div>
+
+                  <!-- Additional Information -->
+                  <div class="form-group">
+                    <h3 class="group-title">📋 Additional Information</h3>
+                    <div class="form-field">
+                      <label for="pickup-authorization">Pickup Authorization (Who can pick up your child/children?)</label>
+                      <textarea id="pickup-authorization" name="pickupAuthorization" rows="3" placeholder="List all authorized pickup persons..."></textarea>
+                    </div>
+                    <div class="form-field">
+                      <label for="special-requests">Special Requests/Comments</label>
+                      <textarea id="special-requests" name="specialRequests" rows="3" placeholder="Any special requests or additional information..."></textarea>
+                    </div>
+                    
+                    <div class="checkboxes">
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="photoConsent" required>
+                        <span class="checkmark"></span>
+                        I consent to my child being photographed/videoed for camp activities and promotional purposes
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" name="termsAgreement" required>
+                        <span class="checkmark"></span>
+                        I agree to the terms and conditions of the day camp program
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- Payment Information -->
+                  <div class="form-group">
+                    <h3 class="group-title">💳 Payment Information</h3>
+                    <div class="payment-methods">
+                      <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="credit-card" required>
+                        <span class="payment-card">
+                          <span class="payment-icon">💳</span>
+                          <span class="payment-text">Credit/Debit Card</span>
+                        </span>
+                      </label>
+                      <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="bank-transfer" required>
+                        <span class="payment-card">
+                          <span class="payment-icon">🏦</span>
+                          <span class="payment-text">Bank Transfer</span>
+                        </span>
+                      </label>
+                      <label class="payment-option">
+                        <input type="radio" name="paymentMethod" value="check" required>
+                        <span class="payment-card">
+                          <span class="payment-icon">📝</span>
+                          <span class="payment-text">Check</span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="save-draft">💾 Save Draft</button>
+                    <button type="submit" class="btn btn-primary" id="submit-registration">🎯 Submit Registration</button>
+                  </div>
+                </form>
+              </section>
+            </div>
+
+            <!-- Right Column: Pricing Summary -->
+            <div class="pricing-column">
+              <div class="pricing-summary" id="pricing-summary">
+                <h3>💰 Registration Summary</h3>
+                <div class="pricing-content">
+                  <div class="empty-state">
+                    <div class="empty-icon">🏕️</div>
+                    <p>Add children and select dates to see pricing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Success Modal -->
+      <div id="success-modal" class="modal">
+        <div class="modal-content">
+          <div class="success-animation">🎉</div>
+          <h3>Registration Successful!</h3>
+          <p>Thank you for registering for our day camps. You will receive a confirmation email shortly.</p>
+          <button class="btn btn-primary" id="close-success">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
