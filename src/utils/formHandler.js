@@ -83,6 +83,15 @@ export class FormHandler {
       // ZIP is optional; if provided, keep it as-is (could be US or international formats)
     }
 
+    // If bank transfer selected, validate minimal non-sensitive details
+    if (paymentMethod && paymentMethod.value === 'bank-transfer') {
+      const acctName = document.getElementById('bank-account-name');
+      if (acctName && acctName.value.trim() === '') {
+        this.showFieldError(acctName, 'Account holder name is required');
+        isValid = false;
+      }
+    }
+
     // Validate required checkboxes
     const requiredCheckboxes = document.querySelectorAll('input[type="checkbox"][required]');
     requiredCheckboxes.forEach(checkbox => {
@@ -117,11 +126,19 @@ export class FormHandler {
         method: document.querySelector('input[name="paymentMethod"]:checked')?.value || '',
         details: (() => {
           const method = document.querySelector('input[name="paymentMethod"]:checked')?.value;
-          if (method !== 'credit-card') return {};
-          const name = document.getElementById('cardholder-name')?.value || '';
-          const last4 = (document.getElementById('card-last4')?.value || '').replace(/\D/g, '').slice(-4);
-          const zip = document.getElementById('card-zip')?.value || '';
-          return { cardholderName: name, last4, zip };
+          if (method === 'credit-card') {
+            const name = document.getElementById('cardholder-name')?.value || '';
+            const last4 = (document.getElementById('card-last4')?.value || '').replace(/\D/g, '').slice(-4);
+            const zip = document.getElementById('card-zip')?.value || '';
+            return { cardholderName: name, last4, zip };
+          }
+          if (method === 'bank-transfer') {
+            const accountName = document.getElementById('bank-account-name')?.value || '';
+            const bankName = document.getElementById('bank-name')?.value || '';
+            const reference = document.getElementById('bank-reference')?.value || '';
+            return { accountName, bankName, reference };
+          }
+          return {};
         })()
       }
     };

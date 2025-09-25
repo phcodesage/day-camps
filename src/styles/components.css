@@ -376,6 +376,15 @@
   margin-top: var(--spacing-sm);
 }
 
+/* Bank transfer details */
+.bank-details {
+  margin-top: var(--spacing-lg);
+}
+
+.bank-details.hidden {
+  display: none !important;
+}
+
 .payment-card {
   display: flex;
   flex-direction: column;

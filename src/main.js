@@ -79,29 +79,23 @@ class DayCampRegistration {
       document.getElementById('success-modal').style.display = 'none';
     });
 
-    // Payment method show/hide for card details
-    const updateCardDetailsVisibility = () => {
+    // Payment method show/hide for details sections
+    const updatePaymentDetailsVisibility = () => {
       const method = document.querySelector('input[name="paymentMethod"]:checked')?.value;
       const cardSection = document.getElementById('card-details');
-      if (!cardSection) return;
+      const bankSection = document.getElementById('bank-details');
       const isCard = method === 'credit-card';
-      cardSection.classList.toggle('hidden', !isCard);
-      // Accessibility
-      if (!isCard) {
-        // Clear any partial inputs when switching away from card
-        const name = document.getElementById('cardholder-name');
-        const last4 = document.getElementById('card-last4');
-        const zip = document.getElementById('card-zip');
-        // Keep values so admin can still see? Requirement didn't specify. We'll leave values.
-      }
+      const isBank = method === 'bank-transfer';
+      if (cardSection) cardSection.classList.toggle('hidden', !isCard);
+      if (bankSection) bankSection.classList.toggle('hidden', !isBank);
     };
     const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
     paymentRadios.forEach(r => r.addEventListener('change', () => {
-      updateCardDetailsVisibility();
+      updatePaymentDetailsVisibility();
       this.updatePricing();
     }));
     // Initialize visibility on load
-    updateCardDetailsVisibility();
+    updatePaymentDetailsVisibility();
 
     // Animate hero section on load
     this.animateHero();
