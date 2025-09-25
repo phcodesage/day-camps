@@ -15,6 +15,7 @@ export class PricingCalculator {
         third: 0.15   // 15% for 3rd+ child
       }
     };
+    this.lastPricing = null;
   }
 
   init() {
@@ -28,6 +29,7 @@ export class PricingCalculator {
     }
 
     const pricing = this.computePricing(children, selectedDates);
+    this.lastPricing = pricing;
     this.displayPricing(pricing);
   }
 
@@ -141,5 +143,10 @@ export class PricingCalculator {
         <p>Add children and select dates to see pricing</p>
       </div>
     `;
+    this.lastPricing = null;
+  }
+
+  getLastPricing() {
+    return this.lastPricing;
   }
 }

@@ -1,0 +1,14 @@
+[functions]
+node_bundler = "esbuild"
+external_node_modules = ["resend", "nodemailer"]
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200
+force = true
+
+[build]
+command = "vite build"
+publish = "dist"
+functions = "netlify/functions"

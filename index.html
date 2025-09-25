@@ -135,7 +135,7 @@
               <section class="section" id="registration-form">
                 <h2 class="section-title">📝 Registration Information</h2>
                 
-                <form id="camp-registration-form">
+                <form id="camp-registration-form" novalidate>
                   <!-- Parent Information -->
                   <div class="form-group">
                     <h3 class="group-title">👨‍👩‍👧‍👦 Parent/Guardian Information</h3>
@@ -209,26 +209,44 @@
                     <h3 class="group-title">💳 Payment Information</h3>
                     <div class="payment-methods">
                       <label class="payment-option">
-                        <input type="radio" name="paymentMethod" value="credit-card" required>
+                        <input type="radio" name="paymentMethod" value="credit-card">
                         <span class="payment-card">
                           <span class="payment-icon">💳</span>
                           <span class="payment-text">Credit/Debit Card</span>
                         </span>
                       </label>
                       <label class="payment-option">
-                        <input type="radio" name="paymentMethod" value="bank-transfer" required>
+                        <input type="radio" name="paymentMethod" value="bank-transfer">
                         <span class="payment-card">
                           <span class="payment-icon">🏦</span>
                           <span class="payment-text">Bank Transfer</span>
                         </span>
                       </label>
                       <label class="payment-option">
-                        <input type="radio" name="paymentMethod" value="check" required>
+                        <input type="radio" name="paymentMethod" value="check">
                         <span class="payment-card">
                           <span class="payment-icon">📝</span>
                           <span class="payment-text">Check</span>
                         </span>
                       </label>
+                    </div>
+                    <!-- Non-sensitive card details (shown only when Credit/Debit Card is selected) -->
+                    <div id="card-details" class="card-details hidden" aria-live="polite">
+                      <div class="form-row">
+                        <div class="form-field">
+                          <label for="cardholder-name">Cardholder Name *</label>
+                          <input type="text" id="cardholder-name" name="cardholderName" autocomplete="cc-name">
+                        </div>
+                        <div class="form-field">
+                          <label for="card-last4">Last 4 digits *</label>
+                          <input type="text" id="card-last4" name="cardLast4" inputmode="numeric" pattern="\\d{4}" maxlength="4" placeholder="1234" autocomplete="off">
+                        </div>
+                        <div class="form-field">
+                          <label for="card-zip">Billing ZIP (optional)</label>
+                          <input type="text" id="card-zip" name="cardZip" autocomplete="postal-code">
+                        </div>
+                      </div>
+                      <p class="security-note">For your security, do NOT enter your full card number or CVV. We only collect non-sensitive details and will follow up securely.</p>
                     </div>
                   </div>
 

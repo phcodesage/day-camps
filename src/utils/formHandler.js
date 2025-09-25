@@ -65,6 +65,24 @@ export class FormHandler {
       isValid = false;
     }
 
+    // If credit card selected, validate non-sensitive details
+    if (paymentMethod && paymentMethod.value === 'credit-card') {
+      const cardholder = document.getElementById('cardholder-name');
+      const last4 = document.getElementById('card-last4');
+      const zip = document.getElementById('card-zip');
+
+      if (cardholder && cardholder.value.trim() === '') {
+        this.showFieldError(cardholder, 'Cardholder name is required');
+        isValid = false;
+      }
+      const last4Digits = (last4?.value || '').replace(/\D/g, '');
+      if (!/^[0-9]{4}$/.test(last4Digits)) {
+        this.showFieldError(last4, 'Please enter the last 4 digits');
+        isValid = false;
+      }
+      // ZIP is optional; if provided, keep it as-is (could be US or international formats)
+    }
+
     // Validate required checkboxes
     const requiredCheckboxes = document.querySelectorAll('input[type="checkbox"][required]');
     requiredCheckboxes.forEach(checkbox => {
@@ -96,7 +114,15 @@ export class FormHandler {
         termsAgreement: document.querySelector('input[name="termsAgreement"]')?.checked || false
       },
       payment: {
-        method: document.querySelector('input[name="paymentMethod"]:checked')?.value || ''
+        method: document.querySelector('input[name="paymentMethod"]:checked')?.value || '',
+        details: (() => {
+          const method = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+          if (method !== 'credit-card') return {};
+          const name = document.getElementById('cardholder-name')?.value || '';
+          const last4 = (document.getElementById('card-last4')?.value || '').replace(/\D/g, '').slice(-4);
+          const zip = document.getElementById('card-zip')?.value || '';
+          return { cardholderName: name, last4, zip };
+        })()
       }
     };
 

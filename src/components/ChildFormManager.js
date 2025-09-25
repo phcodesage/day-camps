@@ -62,14 +62,14 @@ export class ChildFormManager {
         <label>Camp Type *</label>
         <div class="camp-type-selection">
           <div class="camp-type-option">
-            <input type="radio" id="${childId}-half-day" name="${childId}-camp-type" value="half-day" required>
+            <input type="radio" id="${childId}-half-day" name="${childId}-camp-type" value="half-day">
             <label for="${childId}-half-day" class="camp-type-card">
               <div class="camp-type-name">🌅 Half Day</div>
               <div class="camp-type-price">$90/day</div>
             </label>
           </div>
           <div class="camp-type-option">
-            <input type="radio" id="${childId}-full-day" name="${childId}-camp-type" value="full-day" required>
+            <input type="radio" id="${childId}-full-day" name="${childId}-camp-type" value="full-day">
             <label for="${childId}-full-day" class="camp-type-card">
               <div class="camp-type-name">🌞 Full Day</div>
               <div class="camp-type-price">$150/day</div>

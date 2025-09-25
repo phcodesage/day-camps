@@ -1,0 +1,230 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - heading "🏕️ DAY CAMPS" [level=1] [ref=e5]
+      - paragraph [ref=e6]: Engaging Programs for Young Learners
+      - generic [ref=e7]:
+        - generic [ref=e8]: 🍎 Kosher Meals
+        - generic [ref=e9]: 👨‍👩‍👧‍👦 Professional Supervision
+        - generic [ref=e10]: ⭐ Multi-Day Discounts
+  - main [ref=e11]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - heading "🎯 Choose Your Camp Experience" [level=2] [ref=e16]
+          - generic [ref=e17]:
+            - button "🌅 Half Day Camp $90/day 9 AM - 12 PM ✅ Breakfast included ✅ Perfect for younger children ✅ Flexible scheduling ✅ Age-appropriate activities" [ref=e18] [cursor=pointer]:
+              - generic [ref=e19] [cursor=pointer]:
+                - heading "🌅 Half Day Camp" [level=3] [ref=e20] [cursor=pointer]
+                - generic [ref=e21] [cursor=pointer]:
+                  - text: $90
+                  - generic [ref=e22] [cursor=pointer]: /day
+              - generic [ref=e23] [cursor=pointer]:
+                - paragraph [ref=e24] [cursor=pointer]: 9 AM - 12 PM
+                - list [ref=e25] [cursor=pointer]:
+                  - listitem [ref=e26] [cursor=pointer]: ✅ Breakfast included
+                  - listitem [ref=e27] [cursor=pointer]: ✅ Perfect for younger children
+                  - listitem [ref=e28] [cursor=pointer]: ✅ Flexible scheduling
+                  - listitem [ref=e29] [cursor=pointer]: ✅ Age-appropriate activities
+            - button "Most Popular 🌞 Full Day Camp $150/day 9 AM - 3 PM ✅ Breakfast & Lunch included ✅ Complete day of activities ✅ Extended care and supervision ✅ More learning opportunities" [ref=e30] [cursor=pointer]:
+              - generic [ref=e31] [cursor=pointer]: Most Popular
+              - generic [ref=e32] [cursor=pointer]:
+                - heading "🌞 Full Day Camp" [level=3] [ref=e33] [cursor=pointer]
+                - generic [ref=e34] [cursor=pointer]:
+                  - text: $150
+                  - generic [ref=e35] [cursor=pointer]: /day
+              - generic [ref=e36] [cursor=pointer]:
+                - paragraph [ref=e37] [cursor=pointer]: 9 AM - 3 PM
+                - list [ref=e38] [cursor=pointer]:
+                  - listitem [ref=e39] [cursor=pointer]: ✅ Breakfast & Lunch included
+                  - listitem [ref=e40] [cursor=pointer]: ✅ Complete day of activities
+                  - listitem [ref=e41] [cursor=pointer]: ✅ Extended care and supervision
+                  - listitem [ref=e42] [cursor=pointer]: ✅ More learning opportunities
+        - generic [ref=e43]:
+          - heading "📅 Available Dates" [level=2] [ref=e44]
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - heading "🏫 2025 Yeshiva Day Camps" [level=3] [ref=e47]
+              - generic [ref=e48]:
+                - generic [ref=e49] [cursor=pointer]:
+                  - generic [ref=e50] [cursor=pointer]: Oct 6
+                  - generic [ref=e51] [cursor=pointer]: Monday
+                - generic [ref=e52] [cursor=pointer]:
+                  - generic [ref=e53] [cursor=pointer]: Oct 9-10
+                  - generic [ref=e54] [cursor=pointer]: Thu-Fri
+                  - generic [ref=e55] [cursor=pointer]: 2 Days
+                - generic [ref=e56] [cursor=pointer]:
+                  - generic [ref=e57] [cursor=pointer]: Oct 13
+                  - generic [ref=e58] [cursor=pointer]: Monday
+                - generic [ref=e59] [cursor=pointer]:
+                  - generic [ref=e60] [cursor=pointer]: Dec 15
+                  - generic [ref=e61] [cursor=pointer]: Monday
+            - generic [ref=e62]:
+              - heading "🏛️ Public School Days" [level=3] [ref=e63]
+              - generic [ref=e64]:
+                - generic [ref=e65] [cursor=pointer]:
+                  - generic [ref=e66] [cursor=pointer]: Oct 13
+                  - generic [ref=e67] [cursor=pointer]: Monday
+                - generic [ref=e68] [cursor=pointer]:
+                  - generic [ref=e69] [cursor=pointer]: Oct 20
+                  - generic [ref=e70] [cursor=pointer]: Monday
+                - generic [ref=e71] [cursor=pointer]:
+                  - generic [ref=e72] [cursor=pointer]: Nov 4
+                  - generic [ref=e73] [cursor=pointer]: Tuesday
+                - generic [ref=e74] [cursor=pointer]:
+                  - generic [ref=e75] [cursor=pointer]: Nov 11
+                  - generic [ref=e76] [cursor=pointer]: Tuesday
+                - generic [ref=e77] [cursor=pointer]:
+                  - generic [ref=e78] [cursor=pointer]: Dec 24-26
+                  - generic [ref=e79] [cursor=pointer]: Wed-Fri
+                  - generic [ref=e80] [cursor=pointer]: 3 Days
+                - generic [ref=e81] [cursor=pointer]:
+                  - generic [ref=e82] [cursor=pointer]: Dec 29-31
+                  - generic [ref=e83] [cursor=pointer]: Mon-Wed
+                  - generic [ref=e84] [cursor=pointer]: 3 Days
+        - generic [ref=e85]:
+          - heading "📝 Registration Information" [level=2] [ref=e86]
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - heading "👨‍👩‍👧‍👦 Parent/Guardian Information" [level=3] [ref=e89]
+              - generic [ref=e90]:
+                - generic [ref=e91]:
+                  - generic [ref=e92]: Parent/Guardian Name *
+                  - textbox "Parent/Guardian Name *" [ref=e93]: Playwright Tester
+                - generic [ref=e94]:
+                  - generic [ref=e95]: Email Address *
+                  - textbox "Email Address *" [ref=e96]: phcodesage@gmail.com
+              - generic [ref=e97]:
+                - generic [ref=e98]:
+                  - generic [ref=e99]: Phone Number *
+                  - textbox "Phone Number *" [ref=e100]: 555-111-2222
+                - generic [ref=e101]:
+                  - generic [ref=e102]: Emergency Contact Name
+                  - textbox "Emergency Contact Name" [ref=e103]: Emergency Person
+              - generic [ref=e105]:
+                - generic [ref=e106]: Emergency Contact Phone
+                - textbox "Emergency Contact Phone" [ref=e107]: 555-222-3333
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - heading "👶 Children Information" [level=3] [ref=e110]
+                - button "+ Add Child" [ref=e111] [cursor=pointer]
+              - generic [ref=e113]:
+                - generic [ref=e115]: 👶 Child 1
+                - generic [ref=e116]:
+                  - generic [ref=e117]:
+                    - generic [ref=e118]: Child's Full Name *
+                    - textbox "Child's Full Name *" [ref=e119]
+                  - generic [ref=e120]:
+                    - generic [ref=e121]: Age/Grade *
+                    - textbox "Age/Grade *" [ref=e122]
+                - generic [ref=e123]:
+                  - generic [ref=e124]:
+                    - generic [ref=e125]: Dietary Restrictions/Allergies
+                    - textbox "Dietary Restrictions/Allergies" [ref=e126]
+                  - generic [ref=e127]:
+                    - generic [ref=e128]: Special Needs/Accommodations
+                    - textbox "Special Needs/Accommodations" [ref=e129]
+                - generic [ref=e130]:
+                  - generic [ref=e131]: Medical Information
+                  - textbox "Medical Information" [ref=e132]
+                - generic [ref=e133]:
+                  - heading "📅 Available Dates for this Child" [level=4] [ref=e134]
+                  - generic [ref=e135]:
+                    - generic [ref=e136]:
+                      - checkbox "Oct 6" [ref=e137]
+                      - generic [ref=e138]: Oct 6
+                    - generic [ref=e139]:
+                      - checkbox "Oct 9" [ref=e140]
+                      - generic [ref=e141]: Oct 9
+                    - generic [ref=e142]:
+                      - checkbox "Oct 10" [ref=e143]
+                      - generic [ref=e144]: Oct 10
+                    - generic [ref=e145]:
+                      - checkbox "Oct 13" [disabled] [ref=e146]
+                      - generic [ref=e147]: Oct 13
+                    - generic [ref=e148]:
+                      - checkbox "Oct 20" [disabled] [ref=e149]
+                      - generic [ref=e150]: Oct 20
+                    - generic [ref=e151]:
+                      - checkbox "Nov 4" [disabled] [ref=e152]
+                      - generic [ref=e153]: Nov 4
+                    - generic [ref=e154]:
+                      - checkbox "Nov 11" [disabled] [ref=e155]
+                      - generic [ref=e156]: Nov 11
+                    - generic [ref=e157]:
+                      - checkbox "Dec 15" [disabled] [ref=e158]
+                      - generic [ref=e159]: Dec 15
+                    - generic [ref=e160]:
+                      - checkbox "Dec 24" [disabled] [ref=e161]
+                      - generic [ref=e162]: Dec 24
+                    - generic [ref=e163]:
+                      - checkbox "Dec 25" [disabled] [ref=e164]
+                      - generic [ref=e165]: Dec 25
+                    - generic [ref=e166]:
+                      - checkbox "Dec 26" [disabled] [ref=e167]
+                      - generic [ref=e168]: Dec 26
+                    - generic [ref=e169]:
+                      - checkbox "Dec 29" [disabled] [ref=e170]
+                      - generic [ref=e171]: Dec 29
+                    - generic [ref=e172]:
+                      - checkbox "Dec 30" [disabled] [ref=e173]
+                      - generic [ref=e174]: Dec 30
+                    - generic [ref=e175]:
+                      - checkbox "Dec 31" [disabled] [ref=e176]
+                      - generic [ref=e177]: Dec 31
+            - generic [ref=e178]:
+              - heading "📋 Additional Information" [level=3] [ref=e179]
+              - generic [ref=e180]:
+                - generic [ref=e181]: Pickup Authorization (Who can pick up your child/children?)
+                - textbox "Pickup Authorization (Who can pick up your child/children?)" [ref=e182]
+              - generic [ref=e183]:
+                - generic [ref=e184]: Special Requests/Comments
+                - textbox "Special Requests/Comments" [ref=e185]
+              - generic [ref=e186]:
+                - generic [ref=e187] [cursor=pointer]:
+                  - checkbox "✓ I consent to my child being photographed/videoed for camp activities and promotional purposes" [checked]
+                  - generic [ref=e188] [cursor=pointer]: ✓
+                  - text: I consent to my child being photographed/videoed for camp activities and promotional purposes
+                - generic [ref=e189] [cursor=pointer]:
+                  - checkbox "✓ I agree to the terms and conditions of the day camp program" [checked] [active]
+                  - generic [ref=e190] [cursor=pointer]: ✓
+                  - text: I agree to the terms and conditions of the day camp program
+            - generic [ref=e191]:
+              - heading "💳 Payment Information" [level=3] [ref=e192]
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - radio "💳 Credit/Debit Card"
+                  - generic [ref=e195] [cursor=pointer]:
+                    - generic [ref=e196] [cursor=pointer]: 💳
+                    - generic [ref=e197] [cursor=pointer]: Credit/Debit Card
+                - generic [ref=e198]:
+                  - radio "🏦 Bank Transfer"
+                  - generic [ref=e199] [cursor=pointer]:
+                    - generic [ref=e200] [cursor=pointer]: 🏦
+                    - generic [ref=e201] [cursor=pointer]: Bank Transfer
+                - generic [ref=e202]:
+                  - radio "📝 Check"
+                  - generic [ref=e203] [cursor=pointer]:
+                    - generic [ref=e204] [cursor=pointer]: 📝
+                    - generic [ref=e205] [cursor=pointer]: Check
+            - generic [ref=e206]:
+              - button "💾 Save Draft" [ref=e207] [cursor=pointer]
+              - button "🎯 Submit Registration" [ref=e208] [cursor=pointer]
+      - generic [ref=e210]:
+        - heading "💰 Registration Summary" [level=3] [ref=e211]
+        - generic [ref=e212]:
+          - generic [ref=e213]:
+            - generic [ref=e214]:
+              - text: Child 1 (Full Day)
+              - generic [ref=e215]: 3 days × $150
+            - generic [ref=e216]: $427.50
+          - generic [ref=e217]:
+            - generic [ref=e218]: "🎉 Multi-day discount: 5% off"
+            - strong [ref=e220]: "Total savings: $22.50"
+          - generic [ref=e221]:
+            - generic [ref=e222]: Total Cost
+            - generic [ref=e223]: $427.50
+```

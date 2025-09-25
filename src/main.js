@@ -79,6 +79,30 @@ class DayCampRegistration {
       document.getElementById('success-modal').style.display = 'none';
     });
 
+    // Payment method show/hide for card details
+    const updateCardDetailsVisibility = () => {
+      const method = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+      const cardSection = document.getElementById('card-details');
+      if (!cardSection) return;
+      const isCard = method === 'credit-card';
+      cardSection.classList.toggle('hidden', !isCard);
+      // Accessibility
+      if (!isCard) {
+        // Clear any partial inputs when switching away from card
+        const name = document.getElementById('cardholder-name');
+        const last4 = document.getElementById('card-last4');
+        const zip = document.getElementById('card-zip');
+        // Keep values so admin can still see? Requirement didn't specify. We'll leave values.
+      }
+    };
+    const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
+    paymentRadios.forEach(r => r.addEventListener('change', () => {
+      updateCardDetailsVisibility();
+      this.updatePricing();
+    }));
+    // Initialize visibility on load
+    updateCardDetailsVisibility();
+
     // Animate hero section on load
     this.animateHero();
 
@@ -86,18 +110,54 @@ class DayCampRegistration {
     this.setupCampCardSelection();
   }
 
-  handleFormSubmit(e) {
+  async handleFormSubmit(e) {
     e.preventDefault();
-    
-    if (this.formHandler.validateForm()) {
-      const formData = this.formHandler.collectFormData();
-      
-      // Simulate form submission
+
+    const submitBtn = document.getElementById('submit-registration');
+    const formEl = document.getElementById('camp-registration-form');
+    const originalText = submitBtn?.textContent;
+    const setLoading = (loading) => {
+      if (!submitBtn) return;
+      submitBtn.disabled = loading;
+      submitBtn.classList.toggle('is-loading', !!loading);
+      submitBtn.textContent = loading ? 'Submitting…' : originalText || '🎯 Submit Registration';
+      if (formEl) formEl.setAttribute('aria-busy', loading ? 'true' : 'false');
+    };
+
+    if (!this.formHandler.validateForm()) return;
+
+    try {
+      // Guard against double-clicks
+      if (submitBtn?.disabled) return;
+      setLoading(true);
+      const form = this.formHandler.collectFormData();
+      const selectedDates = this.dateSelector.getSelectedDates();
+      const pricing = this.pricingCalculator.getLastPricing();
+
+      const payload = {
+        form,
+        pricing,
+        pricingInput: { daysCount: selectedDates.length, selectedDates },
+        payment: form?.payment || {},
+      };
+
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || `Request failed (${res.status})`);
+      }
+
       this.showSuccessModal();
       this.clearSavedData();
-      
-      // Log the form data for development
-      console.log('Form submitted:', formData);
+    } catch (err) {
+      console.error('Submit error', err);
+      this.showNotification(`Submission failed: ${err?.message || 'Unknown error'}`);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -233,5 +293,76 @@ class DayCampRegistration {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
-  new DayCampRegistration();
+  const app = new DayCampRegistration();
+  // Expose for dev testing only
+  if (import.meta?.env?.DEV) {
+    window.app = app;
+    window.runDemoTest = async function runDemoTest(toEmail = 'phcodesage@gmail.com') {
+      const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+      const formEl = document.getElementById('camp-registration-form');
+      const ensureClick = (el) => { if (el && !el.classList.contains('selected')) el.click(); };
+
+      // 1) Fill parent/guardian info
+      document.getElementById('parent-name').value = 'Demo Parent';
+      document.getElementById('email').value = toEmail;
+      document.getElementById('phone').value = '555-123-4567';
+      document.getElementById('emergency-contact').value = 'Demo Contact';
+      document.getElementById('emergency-phone').value = '555-987-6543';
+      document.getElementById('pickup-authorization').value = 'Demo Aunt, Demo Uncle';
+      document.getElementById('special-requests').value = 'No peanuts please';
+      const photoConsent = document.querySelector('input[name="photoConsent"]');
+      const termsAgreement = document.querySelector('input[name="termsAgreement"]');
+      if (photoConsent) photoConsent.checked = true;
+      if (termsAgreement) termsAgreement.checked = true;
+
+      // 2) Select a couple of available dates (triggers DateSelector logic)
+      const dateOptions = document.querySelectorAll('.date-option');
+      ensureClick(dateOptions[0]);
+      ensureClick(dateOptions[1]);
+
+      // Allow DateSelector to update child date checkboxes
+      await sleep(50);
+
+      // 3) Ensure first child exists and set camp type to full-day
+      const childCard = document.querySelector('.child-form-card');
+      if (!childCard) {
+        app.childFormManager.addChild();
+      }
+      const firstChild = document.querySelector('.child-form-card');
+      const childId = firstChild?.id;
+      if (childId) {
+        const fullDay = firstChild.querySelector(`input[name="${childId}-camp-type"][value="full-day"]`)
+        if (fullDay) {
+          fullDay.checked = true;
+          fullDay.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        // Select available dates for the child (first two enabled)
+        const childDateChecks = firstChild.querySelectorAll(`input[name="${childId}-dates"]`);
+        let checked = 0;
+        childDateChecks.forEach(cb => {
+          if (!cb.disabled && checked < 2) {
+            cb.checked = true;
+            cb.dispatchEvent(new Event('change', { bubbles: true }));
+            checked++;
+          }
+        });
+      }
+
+      // 4) Choose a payment method
+      const pay = document.querySelector('input[name="paymentMethod"][value="bank-transfer"]')
+              || document.querySelector('input[name="paymentMethod"]');
+      if (pay) {
+        pay.checked = true;
+        pay.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      // 5) Trigger pricing update and submit
+      app.updatePricing();
+      await sleep(50);
+
+      const submitEvent = new Event('submit', { bubbles: true, cancelable: true });
+      formEl.dispatchEvent(submitEvent);
+      return 'Demo test triggered: form submitted';
+    };
+  }
 });

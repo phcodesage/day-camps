@@ -361,6 +361,21 @@
   pointer-events: none;
 }
 
+/* Non-sensitive card details section */
+.card-details {
+  margin-top: var(--spacing-lg);
+}
+
+.card-details.hidden {
+  display: none !important;
+}
+
+.security-note {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-sm);
+}
+
 .payment-card {
   display: flex;
   flex-direction: column;
@@ -418,6 +433,32 @@
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+/* Loading state for buttons */
+.btn.is-loading,
+.btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.btn.is-loading {
+  position: relative;
+}
+
+.btn.is-loading::after {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .btn-secondary {

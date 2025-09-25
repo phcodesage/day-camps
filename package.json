@@ -5,10 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:functions": "netlify dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.13",
+    "resend": "^3.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.1",
     "vite": "^5.4.2"
   }
 }
