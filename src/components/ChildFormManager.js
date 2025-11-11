@@ -82,38 +82,6 @@ export class ChildFormManager {
         <h4>📅 Available Dates for this Child</h4>
         <div class="child-dates-grid">
           <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-10-06" name="${childId}-dates" value="2025-10-06" disabled>
-            <label for="${childId}-date-2025-10-06">Oct 6</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-10-09" name="${childId}-dates" value="2025-10-09" disabled>
-            <label for="${childId}-date-2025-10-09">Oct 9</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-10-10" name="${childId}-dates" value="2025-10-10" disabled>
-            <label for="${childId}-date-2025-10-10">Oct 10</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-10-13" name="${childId}-dates" value="2025-10-13" disabled>
-            <label for="${childId}-date-2025-10-13">Oct 13</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-10-20" name="${childId}-dates" value="2025-10-20" disabled>
-            <label for="${childId}-date-2025-10-20">Oct 20</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-11-04" name="${childId}-dates" value="2025-11-04" disabled>
-            <label for="${childId}-date-2025-11-04">Nov 4</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-11-11" name="${childId}-dates" value="2025-11-11" disabled>
-            <label for="${childId}-date-2025-11-11">Nov 11</label>
-          </div>
-          <div class="child-date-option">
-            <input type="checkbox" id="${childId}-date-2025-12-15" name="${childId}-dates" value="2025-12-15" disabled>
-            <label for="${childId}-date-2025-12-15">Dec 15</label>
-          </div>
-          <div class="child-date-option">
             <input type="checkbox" id="${childId}-date-2025-12-24" name="${childId}-dates" value="2025-12-24" disabled>
             <label for="${childId}-date-2025-12-24">Dec 24</label>
           </div>
